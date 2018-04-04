@@ -2,6 +2,15 @@
   [loadExternalAssets]="true"
   [schema]=myJsonSchema
   [layout]=myLayout
-  [framework]="Bootstrap4FrameworkModule"
   (onSubmit)="yourOnSubmitFn($event)"
+  (onChanges)="yourOnChangesFn($event)"
 ></json-schema-form>
+
+<div class="panel panel-warning">
+    <div class="panel-body">
+      Live form log
+    </div>
+    <div class="panel-footer">
+      {{ myForm | json }}
+    </div>
+  </div>

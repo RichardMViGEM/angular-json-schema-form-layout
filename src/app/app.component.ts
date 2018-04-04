@@ -7,8 +7,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  myForm = null;
+
   title = 'app';
 
+  yourOnChangesFn(event) {
+    this.myForm = event;
+    console.log('@INIT: yourOnChangesFn');
+  }
+
+  OnSubmit(event) {
+    console.log('@INIT: OnSubmit');
+  }
+
+  yourOnSubmitFn(event) {
+    console.log('@INIT: yourOnSubmitFn');
+  }
+
+  ResetFn() {
+    console.log('@INIT: ResetFn');
+  }
+
+
+
+  // @FIXME: retrieve from server
   myJsonSchema = {
       "type": "object",
       "title": "Comment",
@@ -67,11 +89,6 @@ export class AppComponent {
         }
       },
 
-      "required": [
-        "name",
-        "email",
-        "comment"
-      ]
     };
 
     
@@ -103,7 +120,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 1</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 1</span>
                     `
                   }
                 ]
@@ -154,7 +171,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 2</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 2</span>
                     `
                   }
                 ]
@@ -205,7 +222,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 3</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 3</span>
                     `
                   }
                 ]
@@ -256,7 +273,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 4</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 4</span>
                     `
                   }
                 ]
@@ -307,7 +324,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 5</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 5</span>
                     `
                   }
                 ]
@@ -358,7 +375,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 6</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 6</span>
                     `
                   }
                 ]
@@ -409,7 +426,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 7</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 7</span>
                     `
                   }
                 ]
@@ -460,7 +477,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 8</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 8</span>
                     `
                   }
                 ]
@@ -511,7 +528,7 @@ export class AppComponent {
                   {
                     "type": "help",
                     "helpvalue":`
-                      <span>Eindeutiger Marker/Trigger-Nummer erh\&Ouml;hen bei Anwenderereignis 9</span>
+                      <span>Eindeutiger Marker/Trigger-Nummer erh\&ouml;hen bei Anwenderereignis 9</span>
                     `
                   }
                 ]
@@ -539,12 +556,14 @@ export class AppComponent {
             ]
           },
 
+          {
+            "type": "actions",
+            "items": [
+              { "type": "submit", "style": "btn-default",   "title": "Submit" }
+            ]
+          }
+
         ]
-      },
-      {
-        "type": "submit",
-        "style": "btn-info",
-        "title": "OK"
       }
     ]
 
